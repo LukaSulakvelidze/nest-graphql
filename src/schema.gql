@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Expence {
+  _id: String!
+  expenceTitle: String!
+  expenceAmount: Float!
+}
+
+type Query {
+  getAllExpence: [Expence!]!
+  findOne(id: IsValidArgsId!): Expence
+}
+
+input IsValidArgsId {
+  id: String!
+}
+
+type Mutation {
+  create(bodyArgs: CreateExpenceInputs!): Expence!
+  update(bodyArgs: UpdateExpenceArgs!): Expence
+  remove(id: IsValidArgsId!): Expence
+}
+
+input CreateExpenceInputs {
+  expenceTitle: String!
+  expenceAmount: Float!
+}
+
+input UpdateExpenceArgs {
+  id: String!
+  expenceTitle: String
+  expenceAmount: Float
+}
